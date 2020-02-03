@@ -13,9 +13,9 @@ public class main
     }
     public static void main(String args[]) {
         Calendar calendar = Calendar.getInstance();
-        int day_of_year = calendar.get(Calendar.DAY_OF_YEAR);
+        int day_of_year = calendar.get(Calendar.DAY_OF_YEAR);       //Gets the current day of year
         DayOfWeek week
-                = DayOfWeek.from(localDate);
+                = DayOfWeek.from(localDate);        //Gets the current day of the week
         int[] day1={0,1,2,3};
         int[] day2={4,5,6,7};
         int[] day3={2,3,0,1};
