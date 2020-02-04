@@ -1,8 +1,15 @@
 package com.gatorblocks;
 import java.util.Calendar;
-import java.time.DayOfWeek;
+
 public class main
 {
+    public static boolean useLoop(int[] arr, int targetValue) {
+        for(int s: arr){
+            if(s==targetValue)
+                return true;
+        }
+        return false;
+    }
     public static int index(String[]a,String b)    //Get the index of a given value in a given list
     {
         int c =0;
@@ -70,17 +77,17 @@ public class main
                 rotation=-2;
                 continue;
             }
-            if(dayOff.contains(day))
+            if(useLoop(dayOff,day)==true)
             {
                 continue;           //skips dev entered days off school
             }
             int dayz = (counter%8);     //When the code reaches to todays date, it will use modulo to tell which rotation is appropiate and then will cycle through the afformentioned lists to display today's classes
             counter++;
-            int x=masterlist[dayz];
-            if(day==day_of_year)
+            int[]x=masterlist[dayz];
+            if(day == day_of_year)
             {
                 for (int i = 0; i < 4; i++) {
-                    String y = x[i];
+                    int y = x[i];
                     String p =classes[y];
                     System.out.println(p);
                 }
