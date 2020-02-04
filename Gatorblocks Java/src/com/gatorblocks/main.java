@@ -26,11 +26,11 @@ public class main
 
         //The following declarations are temporary until i store them on JSON files
 
-        String FirstDay="Wednesday";
-        int[] dayOff = {263,287,298,312,315,329,357,358,359,360,361,364,365,1,2,3,45,48,55,76,77,78,79,80,83,84,85,86,87,101,104,136,139};
-        int begin = 247;
-        int Final = 163;
-        String[] classes = {"AP comp sci", "Math", "Chem", "spare", "spare", "physics", "programming", "english"};
+        String FirstDay="Wednesday";  //Enter the weekday that the first day of school lands on
+        int[] dayOff = {263,287,298,312,315,329,357,358,359,360,361,364,365,1,2,3,45,48,55,76,77,78,79,80,83,84,85,86,87,101,104,136,139}; //Put all days off here in day of year format, DO NOT INCLUDE WEEKENDS
+        int begin = 247;  //Enter the first day of school in day of year format
+        int Final = 163;  //Enter the last day of school in day of year format
+        String[] classes = {"AP comp sci", "Math", "Chem", "spare", "spare", "physics", "programming", "english"};  //enter the classes that are associated with each block
 
         ///-------------------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ public class main
             {
                 continue;           //skips dev entered days off school
             }
-            int dayz = (counter%8);     //When the code reaches to todays date, it will use modulo to tell which rotation is appropiate and then will cycle through the afformentioned lists to display today's classes
+            int dayz = (counter%8);     //When the code reaches to today's date, it will use modulo to tell which rotation is appropriate and then will cycle through the aforementioned lists to display today's classes
             counter++;
             int[]x=masterlist[dayz];
             if(day == day_of_year)
