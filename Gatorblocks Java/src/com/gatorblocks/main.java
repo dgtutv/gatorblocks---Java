@@ -1,21 +1,32 @@
 package com.gatorblocks;
-import java.time.*;
+import java.util.Calendar;
 import java.time.DayOfWeek;
 public class main
 {
-    public static String index(a, b)    //Get the index of a given value in a given list
+    public static int index(String[]a,String b)    //Get the index of a given value in a given list
     {
+        int c =0;
         for (int i = 0; i < a.length; i++)
             if (a[i] == b)
-                return i;
+                c=i;
 
-        return i;
+        return c;
     }
     public static void main(String args[]) {
         Calendar calendar = Calendar.getInstance();
-        int day_of_year = calendar.get(Calendar.DAY_OF_YEAR);       //Gets the current day of year
-        DayOfWeek week
-                = DayOfWeek.from(localDate);        //Gets the current day of the week
+        int day_of_year = calendar.get(Calendar.DAY_OF_YEAR);
+        int week = calendar.get(Calendar.DAY_OF_WEEK);       //Gets current day of week
+
+        //The following declarations are temporary until i store them on JSON files
+
+        String FirstDay="Wednesday";
+        int[] dayOff = {263,287,298,312,315,329,357,358,359,360,361,364,365,1,2,3,45,48,55,76,77,78,79,80,83,84,85,86,87,101,104,136,139};
+        int begin = 247;
+        int Final = 163;
+        String[] classes = {"AP comp sci", "Math", "Chem", "spare", "spare", "physics", "programming", "english"};
+
+        ///-------------------------------------------------------------------------------------
+
         int[] day1={0,1,2,3};
         int[] day2={4,5,6,7};
         int[] day3={2,3,0,1};
@@ -42,7 +53,7 @@ public class main
             dayOff[w]-=begin;
             w++;
         }
-        rotation=index(weekday, FirstDay)-1;     //numeric value of the first day of school
+        int rotation=index(weekday, FirstDay)-1;     //numeric value of the first day of school
         System.out.println(weekday[week]);  //print the day of the week
         System.out.println();
         for(int day=0;day<=365;day++) //iterates through every day from the start of school until today, this is because we want to use modulo to tell which block rotation should be used
@@ -59,18 +70,18 @@ public class main
                 rotation=-2;
                 continue;
             }
-            if(contains(dayOff,day))
+            if(dayOff.contains(day))
             {
                 continue;           //skips dev entered days off school
             }
             int dayz = (counter%8);     //When the code reaches to todays date, it will use modulo to tell which rotation is appropiate and then will cycle through the afformentioned lists to display today's classes
             counter++;
-            x=masterlist[dayz];
-            if day==day_of_year
+            int x=masterlist[dayz];
+            if(day==day_of_year)
             {
                 for (int i = 0; i < 4; i++) {
                     String y = x[i];
-                    String p -classes[y];
+                    String p =classes[y];
                     System.out.println(p);
                 }
             }
